@@ -10,7 +10,7 @@
 #menu {
     position:fixed;
     left:0px;
-    top:9%;
+    top:12%;
     z-index:2000;
 }
 
@@ -31,48 +31,70 @@ ul li i {
 
 #chart:hover {
     background:#5acdf0;
-    padding:30px 30px;
+    padding:22px 22px; 
 }
 
 #globe:hover {
     background:#5acdf0;
-    padding:30px 30px; 
+    padding:22px 22px; 
 }
 
 #nodos:hover {
     background:#5acdf0;
-    padding:30px 30px; 
+    padding:22px 22px; 
 }
 
 #monitor:hover {
     background:#5acdf0;
-    padding:30px 30px; 
+    padding:22px 22px; 
 }
 
 #layer:hover {
     background:#5acdf0;
-    padding:30px 30px; 
+    padding:22px 22px; 
 }
 
 #lineamientos {
     width:585px;
-    margin-left:80px;
+    margin-left:73px;
     padding:8px;
 }
 
 #fundamentales {
     width:585px;
-    margin-left:80px;
+    margin-left:73px;
     text-align:center;
     border-spacing:10px 5px;
     margin-top:20px;
-    
+    height:180px;
+
 }
 
 #indicadores {
     width:1230px;
-    margin-left:65px;
+    margin-left:58px;
+    margin-right:0px;
     text-align: center;
+}
+
+#grafico{
+    position: absolute;
+    width:585px;
+    margin-left:688px;
+}
+
+#grafico1{
+    padding:5px;
+    width:290px;
+    float:left;
+    height:235px;
+}
+
+#grafico2{
+    float:right;
+    padding:5px;
+    width:290px;
+    height:235px;
 }
 
 h6 {
@@ -82,3 +104,4 @@ h6 {
 .card-body {
     padding:8px;
 }
+
