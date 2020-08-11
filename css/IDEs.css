@@ -1,0 +1,59 @@
+
+* {
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+#menu {
+    position:fixed;
+    left:0px;
+    top:9%;
+    z-index:2000;
+}
+
+ul {
+    list-style:none;
+}
+
+ul li i {
+    display:inline-block;
+    padding:20px 20px;
+    color:whitesmoke;
+    background:#5e5e5e;
+    text-decoration:none;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition:all 500ms ease;
+}
+
+#chart:hover {
+    background:#5acdf0;
+    padding:30px 30px;
+}
+
+#globe:hover {
+    background:#5acdf0;
+    padding:30px 30px; 
+}
+
+#nodos:hover {
+    background:#5acdf0;
+    padding:30px 30px; 
+}
+
+#monitor:hover {
+    background:#5acdf0;
+    padding:30px 30px; 
+}
+
+#layer:hover {
+    background:#5acdf0;
+    padding:30px 30px; 
+}
+
+#lineamientos {
+    left:55%;
+}
