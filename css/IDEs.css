@@ -62,12 +62,12 @@ ul li i {
 
 #fundamentales {
     width:585px;
+    float:left;
     margin-left:73px;
     text-align:center;
     border-spacing:10px 5px;
     margin-top:20px;
-    height:180px;
-
+    height:160px;
 }
 
 #indicadores {
@@ -97,6 +97,20 @@ ul li i {
     height:235px;
 }
 
+#recursos {
+    position:absolute;
+    float:right;
+    width:585px;
+    margin-left:688px;
+    text-align:center;
+    border-spacing:10px 5px;
+    margin-top:20px;
+}
+
+#recursos1{
+    height:160px    ;
+}
+
 h6 {
     text-align:center;
 }
@@ -104,4 +118,3 @@ h6 {
 .card-body {
     padding:8px;
 }
-
