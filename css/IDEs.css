@@ -55,5 +55,30 @@ ul li i {
 }
 
 #lineamientos {
-    left:55%;
+    width:585px;
+    margin-left:80px;
+    padding:8px;
+}
+
+#fundamentales {
+    width:585px;
+    margin-left:80px;
+    text-align:center;
+    border-spacing:10px 5px;
+    margin-top:20px;
+    
+}
+
+#indicadores {
+    width:1230px;
+    margin-left:65px;
+    text-align: center;
+}
+
+h6 {
+    text-align:center;
+}
+
+.card-body {
+    padding:8px;
 }
