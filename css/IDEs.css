@@ -9,6 +9,9 @@
 
 #menu {
     position:fixed;
+    widows: 68px;
+    height:100%;
+    background-color:#5e5e5e;
     left:0px;
     top:12%;
     z-index:2000;
@@ -31,27 +34,27 @@ ul li i {
 
 #chart:hover {
     background:#5acdf0;
-    padding:22px 22px; 
+    padding:21px 21px; 
 }
 
 #globe:hover {
     background:#5acdf0;
-    padding:22px 22px; 
+    padding:21px 21px; 
 }
 
 #nodos:hover {
     background:#5acdf0;
-    padding:22px 22px; 
+    padding:21px 21px; 
 }
 
 #monitor:hover {
     background:#5acdf0;
-    padding:22px 22px; 
+    padding:21px 21px; 
 }
 
 #layer:hover {
     background:#5acdf0;
-    padding:22px 22px; 
+    padding:21px 21px; 
 }
 
 #lineamientos {
@@ -117,4 +120,13 @@ h6 {
 
 .card-body {
     padding:8px;
+}
+
+#map {
+    top:10%;
+    width:100%;
+    height:100%;
+    position: absolute;
+    visibility:visible;
+    z-index:1;
 }

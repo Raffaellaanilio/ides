@@ -1,11 +1,21 @@
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
+  $("#globe").click(function(){
+    $("#indicadores").hide();
+    $("#grafico").hide();
+    $("#lineamientos").hide();
+    $("#fundamentales").hide();
+    $("#recursos").hide();
+  });
+  
+  $("#chart").click (function(){
+      $("#indicadores").show();
+      $("#grafico").show();
+      $("#lineamientos").show();
+      $("#fundamentales").show();
+      $("#recursos").show();
+  });
+});
 
-    $("#globe").on("click", function(){
-      $("#indicadores").hide();
-
-      $("#chart").on("click", function(){
-        $("#indicadores").show();
-      });
-    });
+$(document).ready(function(){
+$('[data-toggle="tooltip"]').tooltip();
 });
