@@ -141,14 +141,32 @@
     </div>
     </div>
 
-    <div id='map'></div>
-
-       
-    <script src='js/IDEs.js' rel='stylesheet'></script>
-    </body>
-
-    <div class=card id=mapa style="display: none;">
+    <div class="card" id="mapa" style="display: none;">
         <h6>Mapa</h6>
     </div>
+ 
+    <div class="card" id="nodoside" style="display:none;">
+        <h6>Nodos IDE</h6>
+    </div>
 
+    <div class="card" id="estadoide" style="display: none;">
+        <h6>Estado IDE's en América Latina y El Caribe</h6>
+    </div>
+
+    <div class="card" id="catalogo" style="display: none;">
+        <h6>Descarga de capas</h6>
+    </div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrYzNmN2ltNDAwYTEydXBpNmM3aWdpeWIifQ.mpjEKfvec1z_SQKRZJ_b_g';
+        var map = new mapboxgl.Map({
+        container: 'mapa',
+        style: 'mapbox://styles/mapbox/outdoors-v11',
+        center: [-104.50,-17.22],
+        zoom: 3
+        });
+    </script> 
+
+    <script src='js/IDEs.js' rel='stylesheet'></script>
+</body>
 </html>

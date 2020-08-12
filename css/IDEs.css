@@ -130,6 +130,36 @@ h6 {
 }
 
 #mapa {
+    width:600px;
+    float:left;
+    margin-left:73px;
+    text-align:center;
+    border-spacing:10px 5px;
+    margin-top:20px;
+    height:530px;
+}
+
+#nodoside {
+    width:585px;
+    float:left;
+    margin-left:73px;
+    text-align:center;
+    border-spacing:10px 5px;
+    margin-top:20px;
+    height:530px;
+}
+
+#estadoide {
+    width:585px;
+    float:left;
+    margin-left:73px;
+    text-align:center;
+    border-spacing:10px 5px;
+    margin-top:20px;
+    height:530px;
+}
+
+#catalogo {
     width:585px;
     float:left;
     margin-left:73px;
