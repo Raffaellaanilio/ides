@@ -5,6 +5,8 @@ $(document).ready(function(){
     $("#lineamientos").hide();
     $("#fundamentales").hide();
     $("#recursos").hide();
+    $("#mapa").show();
+
   });
   
   $("#chart").click (function(){
@@ -14,8 +16,11 @@ $(document).ready(function(){
       $("#fundamentales").show();
       $("#recursos").show();
   });
+
+
 });
 
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();
 });
+

@@ -17,12 +17,25 @@
         <div>
         <nav class="navbar navbar-expand-md" id="encabezado" style="background-color:whitesmoke">
             <a href="https://www.cepal.org" target="_blank"><img src="imagenes/logo_eclac.svg" style="height:55px;float:right;border-right:5px;" alt="ECLAC"></a>
-        <h6>Repositorio y Monitoreo de Infraestructura de Datos Espaciales en América Latina y El Caribe</h6>
+          
+            <h6>Repositorio y Monitoreo de Infraestructura de Datos Espaciales en América Latina y El Caribe</h6>
+
+              <div class="dropdown">
+                <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown" style="margin-left:150px;">
+                    <i class="fas fa-globe fa-lg"></i>
+                </button>
+                <div class="dropdown-menu" style="margin-left:150px;">
+                    <a class="dropdown-item" href="#">Español</a>
+                    <a class="dropdown-item" href="#">English</a>
+                </div>
+              </div>
+
         </nav>
         </div>
 
         <div id=menu>
             <ul>
+                <li><i><p></p> </i></li>
                 <li><i class="fas fa-chart-pie fa-lg" data-toggle="tooltip" data-placement="right" title="Dashboard" id="chart"></i></li>
                 <li><i class="fas fa-globe-americas fa-lg" data-toggle="tooltip" data-placement="right" title="Mapa" id="globe"></i></li>
                 <li><i class="fas fa-project-diagram fa-lg" data-toggle="tooltip" data-placement="right" title="Nodos" id="nodos"></i></li>
@@ -133,5 +146,9 @@
        
     <script src='js/IDEs.js' rel='stylesheet'></script>
     </body>
+
+    <div class=card id=mapa style="display: none;">
+        <h6>Mapa</h6>
+    </div>
 
 </html>
