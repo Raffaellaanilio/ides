@@ -141,8 +141,8 @@
     </div>
     </div>
 
-    <div class="card" id="mapa" style="display: none;">
-        <h6>Mapa</h6>
+    <div class="card" id="mapa" style="display:none;">
+    <div id="map"></div>
     </div>
  
     <div class="card" id="nodoside" style="display:none;">
@@ -160,12 +160,21 @@
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrYzNmN2ltNDAwYTEydXBpNmM3aWdpeWIifQ.mpjEKfvec1z_SQKRZJ_b_g';
         var map = new mapboxgl.Map({
-        container: 'mapa',
+        container: 'map',
         style: 'mapbox://styles/mapbox/outdoors-v11',
-        center: [-104.50,-17.22],
-        zoom: 3
+        center: [-100.50,-15.22],
+        zoom: 2
         });
     </script> 
+
+    <div class="card" id="pestañasglobe" style="display: none;">
+        <div class="btn-group">
+            <button type="button" class="btn btn-outline-dark">Desglose IDE país</button>
+            <button type="button" class="btn btn-outline-dark">Listado LAC</button>
+          </div>
+
+        
+    </div>
 
     <script src='js/IDEs.js' rel='stylesheet'></script>
 </body>

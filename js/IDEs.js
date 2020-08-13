@@ -6,6 +6,11 @@ $(document).ready(function(){
       $("#lineamientos").show();
       $("#fundamentales").show();
       $("#recursos").show();
+      $("#mapa").hide();
+      $("#catalogo").hide();
+      $("#estadoide").hide();
+      $("#nodoside").hide();
+      $("#pestañasglobe").hide();
   });
 
   $("#globe").click(function(){
@@ -14,7 +19,11 @@ $(document).ready(function(){
     $("#lineamientos").hide();
     $("#fundamentales").hide();
     $("#recursos").hide();
+    $("#catalogo").hide();
+    $("#estadoide").hide();
+    $("#nodoside").hide();
     $("#mapa").show();
+    $("#pestañasglobe").show();
 
   });
 
@@ -25,6 +34,9 @@ $(document).ready(function(){
     $("#fundamentales").hide();
     $("#recursos").hide();
     $("#mapa").hide();
+    $("#pestañasglobe").hide();
+    $("#catalogo").hide();
+    $("#estadoide").hide();
     $("#nodoside").show();
   });
 
@@ -35,6 +47,8 @@ $(document).ready(function(){
     $("#fundamentales").hide();
     $("#recursos").hide();
     $("#nodoside").hide();
+    $("#pestañasglobe").hide();
+    $("#catalogo").hide();
     $("#estadoide").show();
   });
 
@@ -47,6 +61,7 @@ $(document).ready(function(){
     $("#mapa").hide();
     $("#nodoside").hide();
     $("#estadoide").hide();
+    $("#pestañasglobe").hide();
     $("#catalogo").show();
   });
 

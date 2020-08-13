@@ -130,13 +130,20 @@ h6 {
 }
 
 #mapa {
-    width:600px;
+    height:530px;
+    width:590px;
     float:left;
     margin-left:73px;
-    text-align:center;
-    border-spacing:10px 5px;
-    margin-top:20px;
-    height:530px;
+    margin-top:10px;
+}
+
+#map {
+    position: absolute;
+    width:100%;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #nodoside {
@@ -167,4 +174,14 @@ h6 {
     border-spacing:10px 5px;
     margin-top:20px;
     height:530px;
+}
+
+#pestañasglobe {
+    position:relative;
+    float:right;
+    height:530px;
+    width:590px;
+    margin-right:10px;
+    border-spacing:10px 5px;
+    margin-top:10px;
 }
