@@ -7,7 +7,20 @@
 }
 
 #encabezado {
-    margin-left:68px;
+    z-index:3000;
+    margin-left:0px;
+}
+
+#faq {
+    margin-left:50px;
+}
+
+#about {
+    margin-left:200px;
+}
+
+#idioma {
+    margin-left:150px;
 }
 
 #menu {
@@ -23,15 +36,15 @@ ul {
     list-style:none;
 }
 
-ul li i {
-    display:inline-block;
-    padding:20px 20px;
-    color:whitesmoke;
-    background:#5e5e5e;
-    text-decoration:none;
-    -webkit-transition:all 500ms ease;
-    -o-transition:all 500ms ease;
-    transition:all 500ms ease;
+#menu ul li i{
+display:inline-block;
+padding:20px 20px;
+color:whitesmoke;
+background:#5e5e5e;
+text-decoration:none;
+-webkit-transition:all 500ms ease;
+-o-transition:all 500ms ease;
+transition:all 500ms ease;
 }
 
 #chart:hover {
@@ -125,7 +138,7 @@ h6 {
 }
 
 #mapa {
-    height:530px;
+    height:540px;
     width:590px;
     float:left;
     margin-left:73px;
@@ -174,7 +187,7 @@ h6 {
 #pestañasglobe {
     position:relative;
     float:right;
-    height:530px;
+    height:540px;
     width:590px;
     margin-right:10px;
     border-spacing:10px 5px;
@@ -193,4 +206,38 @@ h6 {
 
 #textotitulo{
     padding:3px;
+}
+
+#mapabase li{
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#economia li{
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#agricultura li{
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#poblacion li{
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#limites li{
+    display: inline;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#tabla2 tbody tr td i :hover{
+    box-shadow: 10px 10px 3px -8px;
 }

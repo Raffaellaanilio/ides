@@ -22,12 +22,15 @@
 
             <h6>Repositorio y Monitoreo de Infraestructura de Datos Espaciales en América Latina y El Caribe</h6>
 
-            <div class="dropdown">
-                <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown"
-                    style="margin-left:150px;">
+            <div id="faq"><i class="fas fa-question fa-lg" data-toggle="tooltip" data-placement="down" title="Preguntas Frecuentes"></i></div>
+
+            <div id="about"><i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="down" title="Acerca de"></i></div>
+
+            <div id="idioma" class="dropdown dropleft">
+                <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">
                     <i class="fas fa-globe fa-lg"></i>
                 </button>
-                <div class="dropdown-menu" style="margin-left:150px;">
+                <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Español</a>
                     <a class="dropdown-item" href="#">English</a>
                 </div>
@@ -36,11 +39,9 @@
         </nav>
     </div>
 
-    <div id=menu>
+    <div id="menu">
         <ul>
-            <li><i>
-                    <p></p>
-                </i></li>
+            <li><i><p></p></i></li>
             <li><i class="fas fa-chart-pie fa-lg" data-toggle="tooltip" data-placement="right" title="Dashboard"
                     id="chart"></i></li>
             <li><i class="fas fa-globe-americas fa-lg" data-toggle="tooltip" data-placement="right" title="Mapa"
@@ -145,8 +146,15 @@
     </div>
     </div>
 
-    <div class=card id=fundamentales>
+    <div class=card id="fundamentales">
         <h6>Datos Fundamentales</h6>
+        <ul>
+            <li><i id="mapabase" class="fas fa-map"></i></li>
+            <li><i id="economia" class="fas fa-chart-bar"></i></li>
+            <li><i id="agricultura" class="fas fa-leaf"></i></li>
+            <li><i id="poblacion" class="fas fa-users"></i></li>
+            <li><i id="limites" class="fas fa-border-style"></i></li>
+        </ul>
     </div>
 
     <div class=wrapper id=recursos>
@@ -183,14 +191,14 @@
 
     <div class="card" id="pestañasglobe" style="display: none;">
         <div class="btn-group">
-            <button id="botonidepais" type="button" class="btn btn-dark border border-secondary">Desglose IDE
+            <button id="botonidepais" type="button" class="btn btn-basic">Desglose IDE
                 país</button>
-            <button id="botonlistadolac" type="button" class="btn btn-dark border border-secondary">Listado
+            <button id="botonlistadolac" type="button" class="btn btn-dark">Listado
                 LAC</button>
         </div>
 
         <div id="search" class="dropdown">
-            <button type="button" class="btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+            <button type="button" class="btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" style="margin-left:5px">
                 Elección de país
             </button>
             <div class="dropdown-menu">
@@ -207,19 +215,19 @@
 
         <div class="row mb-3" id=pestañas>
             <div class="col-xl-6 col-sm-6 py-1">
-                <button id="botonidenacional" type="button" class="btn btn-success" style="width:280px;">IDE Nacional
+                <button id="botonidenacional" type="button" class="btn btn-success" style="width:270px;margin-left:5px;">IDE Nacional
                     <h6>1</h6>
                 </button>
             </div>
             <div class="col-xl-6 col-sm-6 py-1">
-                <button id="botonidesubnacional" type="button" class="btn btn-danger" style="width:280px;">IDEs
+                <button id="botonidesubnacional" type="button" class="btn btn-danger" style="width:270px;margin-right:5px;">IDEs
                     Subnacional
                     <h6>4</h6>
                 </button>
             </div>
         </div>
 
-        <div id="tabla1" class="container">
+        <div id="tabla1">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -232,23 +240,13 @@
                     <tr>
                         <td>IDE Chile</td>
                         <td>Ministerio de Bienes Nacionales</td>
-                        <td>Link</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><i class="fas fa-external-link-alt"></i></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div id="tabla2" class="container" style="display: none;">
+        <div id="tabla2" style="display: none;">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -261,22 +259,22 @@
                     <tr>
                         <td>IDE Minagri</td>
                         <td>Ministerio de Agricultura</td>
-                        <td>Link</td>
+                        <td><i class="fas fa-external-link-alt"></i></td>
                     </tr>
                     <tr>
                         <td>SERNAGEOMIN</td>
                         <td>Ministerio de Minería</td>
-                        <td>Link</td>
+                        <td><i class="fas fa-external-link-alt"></i></td>
                     </tr>
                     <tr>
                         <td>SINIA</td>
                         <td>Ministerio del Medio Ambiente</td>
-                        <td>Link</td>
+                        <td><i class="fas fa-external-link-alt"></i></td>
                     </tr>
                     <tr>
                         <td>Geodatos Abiertos INE</td>
                         <td>Ministerio de Economía, Fomento y Turismo</td>
-                        <td>Link</td>
+                        <td><i class="fas fa-external-link-alt"></i></td>
                     </tr>
                 </tbody>
             </table>
@@ -285,7 +283,7 @@
     <table id="tablalistadolac" class="table table-striped" style="display:none;">
         <thead>
             <tr>
-                <th>Pais</th>
+                <th>País</th>
                 <th>IDE Nacional</th>
                 <th>IDEs Subnacional</th>
             </tr>

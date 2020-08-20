@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  $('[data-toggle="tooltip"]').tooltip();
   
   $("#chart").click (function(){
       $("#indicadores").show();
@@ -96,21 +98,26 @@ $(document).ready(function(){
     $("#tablalistadolac").hide();
   });
 
-});
-
-$(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip();
-});
-
 $("#botonidepais").click (function(){
-  $("#botonidepais").addClass ("btn-dark");
-  $("#botonlistadolac").removeClass ("btn-dark");
+  $("#botonidepais").removeClass ("btn-dark");
+  $("#botonidepais").addClass ("btn-basic");
+  $("#botonlistadolac").addClass ("btn-dark");
 });
 
 $("#botonlistadolac").click (function(){
-  $("#botonlistadolac").addClass ("btn-dark");
-  $("#botonidepais").removeClass ("btn-dark");
+  $("#botonlistadolac").removeClass ("btn-dark");
+  $("#botonlistadolac").addClass ("btn-basic");
+  $("#botonidepais").addClass ("btn-dark");
 });
 
+$("#botonidenacional").click (function(){
+  $("#botonidenacional").css('box-shadow', '4px 4px 4px #c3c4c6');
+  $("#botonidesubnacional").css('box-shadow', 'none');
+});
 
+$("#botonidesubnacional").click (function(){
+  $("#botonidesubnacional").css('box-shadow', '4px 4px 4px #c3c4c6');
+  $("#botonidenacional").css('box-shadow', 'none');
+});
 
+});
