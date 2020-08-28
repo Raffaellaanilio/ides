@@ -4,6 +4,11 @@
 <head>
     <title>Repositorio y Monitor IDE's</title>
     <meta charset="utf-8">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/sankey.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://echarts.apache.org/examples/stylesheets/main.css?_v_=1597861062346">
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -22,9 +27,11 @@
 
             <h6>Repositorio y Monitoreo de Infraestructura de Datos Espaciales en América Latina y El Caribe</h6>
 
-            <div id="faq"><i class="fas fa-question fa-lg" data-toggle="tooltip" data-placement="down" title="Preguntas Frecuentes"></i></div>
+            <div id="faq"><i class="fas fa-question fa-lg" data-toggle="tooltip" data-placement="down"
+                    title="Preguntas Frecuentes"></i></div>
 
-            <div id="about"><i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="down" title="Acerca de"></i></div>
+            <div id="about"><i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="down"
+                    title="Acerca de"></i></div>
 
             <div id="idioma" class="dropdown dropleft">
                 <button type="button" class="btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">
@@ -41,7 +48,9 @@
 
     <div id="menu">
         <ul>
-            <li><i><p></p></i></li>
+            <li><i>
+                    <p></p>
+                </i></li>
             <li><i class="fas fa-chart-pie fa-lg" data-toggle="tooltip" data-placement="right" title="Dashboard"
                     id="chart"></i></li>
             <li><i class="fas fa-globe-americas fa-lg" data-toggle="tooltip" data-placement="right" title="Mapa"
@@ -94,12 +103,98 @@
         </div>
     </div>
 
-    <div class=wrapper id=grafico>
-        <div class="card" id=grafico1>
-            <h6>grafico1</h6>
+    <div class=wrapper id="grafico">
+        <div class="card" id="grafico1">
+            <script type="text/javascript">
+                var chart = document.getElementById("grafico1");
+                var myChart = echarts.init(chart);
+                var option = {
+                    title: {
+                        text: "Total IDES 2010-2020"
+                    },
+                    legend: [
+                        {
+                            data: ["Hours Worked"]
+                        }
+                    ],
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            data: ['2010', '2012', '2014', '2016', '2018', '2020'],
+                            axisTick: {
+                                alignWithLabel: true
+                            }
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'Total IDEs',
+                            type: 'bar',
+                            barWidth: '60%',
+                            data: [20, 32, 45, 56, 67, 86]
+                        }
+                    ]
+                };
+                myChart.setOption(option, true);
+            </script>
         </div>
-        <div class="card" id=grafico2>
-            <h6>grafico2</h6>
+
+        <div class="card" id="grafico2">
+            <script>
+                var myChart = echarts.init(document.getElementById('grafico2'));
+
+                var option = {
+                    title: {
+                        text: 'Recursos',
+                        subtext: 'Nivel Regional',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: ['Mapas Base', 'Economía', 'Biodiversidad', 'Población', 'Límites']
+                    },
+                    series: [
+                        {
+                            name: 'Recurso',
+                            type: 'pie',
+                            radius: '45%',
+                            center: ['50%', '60%'],
+                            data: [
+                                { value: 335, name: 'Mapas Base' },
+                                { value: 310, name: 'Economía' },
+                                { value: 234, name: 'Biodiversidad' },
+                                { value: 135, name: 'Población' },
+                                { value: 1548, name: 'Límites' }
+                            ],
+                            itemStyle: {
+                                emphasis: {
+                                    shadowBlur: 0,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0)'
+
+                                }
+                            }
+                        }
+                    ]
+                };
+                myChart.setOption(option);
+            </script>
         </div>
     </div>
 
@@ -146,29 +241,88 @@
     </div>
     </div>
 
-    <div class=card id="fundamentales">
-        <h6>Datos Fundamentales</h6>
-        <ul>
-            <li><i id="mapabase" class="fas fa-map"></i></li>
-            <li><i id="economia" class="fas fa-chart-bar"></i></li>
-            <li><i id="agricultura" class="fas fa-leaf"></i></li>
-            <li><i id="poblacion" class="fas fa-users"></i></li>
-            <li><i id="limites" class="fas fa-border-style"></i></li>
-        </ul>
+    <div class="card" id="fundamentales">
+
     </div>
 
-    <div class=wrapper id=recursos>
-        <div class=card id=recursos1>
+    <div class="wrapper" id="recursos">
+        <div class="card" id="recursos1">
             <h6>Recursos IDE nacionales</h6>
         </div>
     </div>
 
-    <div class="card" id="mapa" style="display:none;">
-        <div id="map"></div>
-    </div>
+    <div id="contenedormapa" style="display:none;"></div>
 
-    <div class="card" id="nodoside" style="display:none;">
-        <h6>Nodos IDE</h6>
+    <div class="card placeholders" id="nodoside" style="display:none;">
+        <script>
+            var config =    
+            {
+                credits: {
+                    enabled: false
+                },
+                chart:
+                {
+                    backgroundColor: null,
+                    renderTo: 'nodoside',
+                    type: 'sankey'
+                },
+                legend:
+                {
+                    enabled: false
+                },
+                plotOptions:
+                {
+                    sankey:
+                    {
+                        borderColor: null
+                    },
+                    series:
+                    {
+                        dataLabels:
+                        {
+                            style:
+                            {
+                                fontWeight: 'normal'
+                            }
+                        },
+                        states:
+                        {
+                            hover:
+                            {
+                                enabled: false,
+                                brightness: 0
+                            }
+                        }
+                    }
+                },
+                series:
+                    [
+                        {
+                            keys: ['from', 'to', 'weight'],
+                            data: [
+                                ['Group A', 'Group F', 2],
+                                ['Group A', 'Group G', 1],
+                                ['Group B', 'Group H', 2],
+                                ['Group B', 'Group I', 1],
+                                ['Group C', 'Group F', 1],
+                                ['Group D', 'Group G', 1],
+                                ['Group E', 'Group J', 1]
+                            ]
+                        }
+                    ],
+                title:
+                {
+                    text: 'Nodos IDE'
+                },
+                tooltip:
+                {
+                    enabled: false
+                }
+            };
+
+            // Render charts
+            Highcharts.chart(config);
+        </script>
     </div>
 
     <div class="card" id="estadoide" style="display: none;">
@@ -179,16 +333,6 @@
         <h6>Descarga de capas</h6>
     </div>
 
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrYzNmN2ltNDAwYTEydXBpNmM3aWdpeWIifQ.mpjEKfvec1z_SQKRZJ_b_g';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/outdoors-v11',
-            center: [-100.50, -15.22],
-            zoom: 2
-        });
-    </script>
-
     <div class="card" id="pestañasglobe" style="display: none;">
         <div class="btn-group">
             <button id="botonidepais" type="button" class="btn btn-basic">Desglose IDE
@@ -198,7 +342,8 @@
         </div>
 
         <div id="search" class="dropdown">
-            <button type="button" class="btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" style="margin-left:5px">
+            <button type="button" class="btn-sm btn-primary dropdown-toggle" data-toggle="dropdown"
+                style="margin-left:5px">
                 Elección de país
             </button>
             <div class="dropdown-menu">
@@ -215,12 +360,14 @@
 
         <div class="row mb-3" id=pestañas>
             <div class="col-xl-6 col-sm-6 py-1">
-                <button id="botonidenacional" type="button" class="btn btn-success" style="width:270px;margin-left:5px;">IDE Nacional
+                <button id="botonidenacional" type="button" class="btn btn-success"
+                    style="width:270px;margin-left:5px;">IDE Nacional
                     <h6>1</h6>
                 </button>
             </div>
             <div class="col-xl-6 col-sm-6 py-1">
-                <button id="botonidesubnacional" type="button" class="btn btn-danger" style="width:270px;margin-right:5px;">IDEs
+                <button id="botonidesubnacional" type="button" class="btn btn-danger"
+                    style="width:270px;margin-right:5px;">IDEs
                     Subnacional
                     <h6>4</h6>
                 </button>
@@ -280,38 +427,38 @@
             </table>
         </div>
 
-    <table id="tablalistadolac" class="table table-striped" style="display:none;">
-        <thead>
-            <tr>
-                <th>País</th>
-                <th>IDE Nacional</th>
-                <th>IDEs Subnacional</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Chile</td>
-                <td>1</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>Argentina</td>
-                <td>1</td>
-                <td>6</td>
-            </tr>
-            <tr>
-                <td>Uruguay</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Bolivia</td>
-                <td>1</td>
-                <td>6</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+        <table id="tablalistadolac" class="table table-striped" style="display:none;">
+            <thead>
+                <tr>
+                    <th>País</th>
+                    <th>IDE Nacional</th>
+                    <th>IDEs Subnacional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chile</td>
+                    <td>1</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Argentina</td>
+                    <td>1</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>Uruguay</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Bolivia</td>
+                    <td>1</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     </div>
 

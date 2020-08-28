@@ -9,7 +9,7 @@ $(document).ready(function(){
       $("#fundamentales").show();
       $("#recursos").show();
       $("#titulo").show();
-      $("#mapa").hide();
+      $("#contenedormapa").hide();
       $("#catalogo").hide();
       $("#estadoide").hide();
       $("#nodoside").hide();
@@ -26,7 +26,7 @@ $(document).ready(function(){
     $("#estadoide").hide();
     $("#nodoside").hide();
     $("#titulo").hide();
-    $("#mapa").show();
+    $("#contenedormapa").show();
     $("#pestañasglobe").show();
 
   });
@@ -37,7 +37,7 @@ $(document).ready(function(){
     $("#lineamientos").hide();
     $("#fundamentales").hide();
     $("#recursos").hide();
-    $("#mapa").hide();
+    $("#contenedormapa").hide();
     $("#pestañasglobe").hide();
     $("#catalogo").hide();
     $("#estadoide").hide();
@@ -64,7 +64,7 @@ $(document).ready(function(){
     $("#lineamientos").hide();
     $("#fundamentales").hide();
     $("#recursos").hide();
-    $("#mapa").hide();
+    $("#contenedormapa").hide();
     $("#nodoside").hide();
     $("#estadoide").hide();
     $("#pestañasglobe").hide();
@@ -121,3 +121,13 @@ $("#botonidesubnacional").click (function(){
 });
 
 });
+
+$("#contenedormapa").onload (function(){
+mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrYzNmN2ltNDAwYTEydXBpNmM3aWdpeWIifQ.mpjEKfvec1z_SQKRZJ_b_g';
+            var map = new mapboxgl.Map({
+                container: 'contenedormapa',
+                style: 'mapbox://styles/mapbox/outdoors-v11',
+                center: [-100.50, -15.22],
+                zoom: 2
+            });
+          });
