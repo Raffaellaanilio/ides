@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Repositorio y Monitor IDE's</title>
+    <title>Repositorio y Monitor IDEs</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/sankey.js"></script>
     <link rel="stylesheet" type="text/css" href="https://echarts.apache.org/examples/stylesheets/main.css?_v_=1597861062346">
@@ -15,8 +21,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href='css/IDEs.css' rel='stylesheet' />
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -251,7 +255,17 @@
         </div>
     </div>
 
-    <div id="contenedormapa" style="display:none;"></div>
+    <div id="contenedormapa"></div>
+    <script>
+        var mymap = L.map('contenedormapa').setView([51.505, -0.09], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrZWlubncydjEwOGgyd21udHdmOWJ4M24ifQ.E2q7D7b-Je_x7VRjbqjAAA}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        }).addTo(mymap);
+    </script>
 
     <div class="card placeholders" id="nodoside" style="display:none;">
         <script>
@@ -325,12 +339,69 @@
         </script>
     </div>
 
-    <div class="card" id="estadoide" style="display: none;">
-        <h6>Estado IDE's en América Latina y El Caribe</h6>
+    <div id="tituloestadoide" class="container-fluid" style="display:none;">
+        <h6 id="textotitulo">Calidad y Estado de los Servicios OGC en las IDE y plataformas geoespaciales</h6>
     </div>
+
+
+    <div class="card" id="estadoide" style="display: none;">
+        <img src="imagenes/geohealthcheck.png">
+    </div>
+
+    <div class="card" id="mapaestadoide" style="display:none;">
+        <div class="btn-group" style="padding-left: 10px; padding-right:10px;padding-top:10px;">
+            <button type="button" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">País<span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <a class="dropdown-item" href="#">Filtro Búsqueda</a>
+                <a class="dropdown-item" href="#">Chile</a>
+                <a class="dropdown-item" href="#">Argentina</a>
+                <a class="dropdown-item" href="#">Uruguay</a>
+                <a class="dropdown-item" href="#">Brasil</a>
+                <a class="dropdown-item" href="#">Perú</a>
+                <a class="dropdown-item" href="#">Bolivia</a>
+            </ul>
+
+        <div class="btn-group">
+            <button type="button" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">Tipo de Plataforma <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <a class="dropdown-item" href="#">IDE Nacional Estatal</a>
+                <a class="dropdown-item" href="#">IDE Subnacional Estatal</a>
+                <a class="dropdown-item" href="#">Visualizador Nacional</a>
+                <a class="dropdown-item" href="#">Visualizador Subnacional</a>
+                <a class="dropdown-item" href="#">Productos Cartográficos</a>
+                <a class="dropdown-item" href="#">Visualizador Académico</a>
+                <a class="dropdown-item" href="#">Visualizador Institución/Empresa Externa</a>
+            </ul>
+
+        </div>
+           
+            <button type="button" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">Especifique <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <a class="dropdown-item" href="#">IDE Nacional Estatal</a>
+                <a class="dropdown-item" href="#">IDE Subnacional Estatal</a>
+                <a class="dropdown-item" href="#">Visualizador Nacional</a>
+                <a class="dropdown-item" href="#">Visualizador Subnacional</a>
+                <a class="dropdown-item" href="#">Productos Cartográficos</a>
+                <a class="dropdown-item" href="#">Visualizador Académico</a>
+                <a class="dropdown-item" href="#">Visualizador Institución/Empresa Externa</a>
+            </ul>
+
+            <button type="button" class="btn btn-dark"><i class="fas fa-search"></i> <span class="caret"></span>
+            </button>
+
+          </div>
+        </div>
+
+       
+
+   
 
     <div class="card" id="catalogo" style="display: none;">
         <h6>Descarga de capas</h6>
+        <img src="imagenes/geonetwork.png" style="width:690px;">
     </div>
 
     <div class="card" id="pestañasglobe" style="display: none;">
@@ -463,6 +534,48 @@
     </div>
 
     </div>
+
+    <div class="card" id="infonodos" style="display: none;">
+            <div class="card-header" style="text-align:center;">Información del nodo</div>
+            <div class="card-body">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Estado</th>
+                            <td>Activo</td>
+                          </tr>
+                      <tr>
+                        <th>Institución</th>
+                        <td>Ejemplo</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Encargado</th>
+                        <td>Ejemplo</td>
+                      </tr>
+                      <tr>
+                        <th>Correo</th>
+                        <td>ejemplo@gmail.com</td>
+                      </tr>
+                      <tr>
+                        <th>URL</th>
+                        <td>Link</td>
+                      </tr>
+                      <tr>
+                        <th>Capas Publicadas</th>
+                        <td>#</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div style="margin-left:60px;">
+                  <button type="button" class="btn btn-info">Ver listado de capas</button>
+                  <button type="button" class="btn btn-warning">Ir al nodo</button>
+                </div>
+
+            </div>
+        </div>
 
     <script src='js/IDEs.js' rel='stylesheet'></script>
 </body>

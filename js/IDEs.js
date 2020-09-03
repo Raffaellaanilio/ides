@@ -14,6 +14,9 @@ $(document).ready(function(){
       $("#estadoide").hide();
       $("#nodoside").hide();
       $("#pestañasglobe").hide();
+      $("#mapaestadoide").hide();
+      $("#infonodos").hide();
+      $("#tituloestadoide").hide();
   });
 
   $("#globe").click(function(){
@@ -26,6 +29,9 @@ $(document).ready(function(){
     $("#estadoide").hide();
     $("#nodoside").hide();
     $("#titulo").hide();
+    $("#infonodos").hide();
+    $("#mapaestadoide").hide();
+    $("#tituloestadoide").hide();
     $("#contenedormapa").show();
     $("#pestañasglobe").show();
 
@@ -42,7 +48,10 @@ $(document).ready(function(){
     $("#catalogo").hide();
     $("#estadoide").hide();
     $("#titulo").hide();
+    $("#mapaestadoide").hide();
+    $("#tituloestadoide").hide();
     $("#nodoside").show();
+    $("#infonodos").show();
   });
 
   $("#monitor").click (function(){
@@ -55,7 +64,11 @@ $(document).ready(function(){
     $("#pestañasglobe").hide();
     $("#catalogo").hide();
     $("#titulo").hide();
+    $("#infonodos").hide();
     $("#estadoide").show();
+    $("#mapaestadoide").show();
+    $("#tituloestadoide").show();
+
   });
 
   $("#layer").click (function(){
@@ -69,6 +82,9 @@ $(document).ready(function(){
     $("#estadoide").hide();
     $("#pestañasglobe").hide();
     $("#titulo").hide();
+    $("#infonodos").hide();
+    $("#mapaestadoide").hide();
+    $("#tituloestadoide").hide();
     $("#catalogo").show();
   });
 
@@ -120,14 +136,9 @@ $("#botonidesubnacional").click (function(){
   $("#botonidenacional").css('box-shadow', 'none');
 });
 
+$("#botonidepais").click (function(){
+  $("#botonidesubnacional").css('box-shadow', 'none');
+  $("#botonidenacional").css('box-shadow', '4px 4px 4px #c3c4c6');
 });
 
-$("#contenedormapa").onload (function(){
-mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrYzNmN2ltNDAwYTEydXBpNmM3aWdpeWIifQ.mpjEKfvec1z_SQKRZJ_b_g';
-            var map = new mapboxgl.Map({
-                container: 'contenedormapa',
-                style: 'mapbox://styles/mapbox/outdoors-v11',
-                center: [-100.50, -15.22],
-                zoom: 2
-            });
-          });
+});
