@@ -1,4 +1,7 @@
 $(document).ready(function(){
+  $("#contenedormapa").hide();
+
+  $("#chart").css('background', '#5acdf0');
 
   $('[data-toggle="tooltip"]').tooltip();
   
@@ -17,6 +20,8 @@ $(document).ready(function(){
       $("#mapaestadoide").hide();
       $("#infonodos").hide();
       $("#tituloestadoide").hide();
+      $("#chart").css('background', '#5acdf0');
+      $("#globe").css('background', 'none');
   });
 
   $("#globe").click(function(){
@@ -34,6 +39,11 @@ $(document).ready(function(){
     $("#tituloestadoide").hide();
     $("#contenedormapa").show();
     $("#pestañasglobe").show();
+    $("#chart").css('background', 'none');
+    $("#layer").css('background', 'none');
+    $("#nodos").css('background', 'none');
+    $("#monitor").css('background', 'none');
+    $("#globe").css('background', '#5acdf0');
 
   });
 
@@ -52,6 +62,11 @@ $(document).ready(function(){
     $("#tituloestadoide").hide();
     $("#nodoside").show();
     $("#infonodos").show();
+    $("#chart").css('background', 'none');
+    $("#globe").css('background', 'none');
+    $("#layer").css('background', 'none');
+    $("#monitor").css('background', 'none');
+    $("#nodos").css('background', '#5acdf0');
   });
 
   $("#monitor").click (function(){
@@ -68,6 +83,11 @@ $(document).ready(function(){
     $("#estadoide").show();
     $("#mapaestadoide").show();
     $("#tituloestadoide").show();
+    $("#chart").css('background', 'none');
+    $("#globe").css('background', 'none');
+    $("#nodos").css('background', 'none');
+    $("#layer").css('background', 'none');
+    $("#monitor").css('background', '#5acdf0');
 
   });
 
@@ -86,6 +106,11 @@ $(document).ready(function(){
     $("#mapaestadoide").hide();
     $("#tituloestadoide").hide();
     $("#catalogo").show();
+    $("#chart").css('background', 'none');
+    $("#globe").css('background', 'none');
+    $("#nodos").css('background', 'none');
+    $("#monitor").css('background', 'none');
+    $("#layer").css('background', '#5acdf0');
   });
 
   $("#botonidenacional").click (function(){
