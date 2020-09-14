@@ -13,10 +13,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.6.0/echarts-en.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+    <script src="js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <link href='css/IDEs.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -27,8 +29,10 @@
 
             <h6>Repositorio y Monitoreo de Infraestructura de Datos Espaciales en América Latina y El Caribe</h6>
 
+            <!--
             <div id="faq"><i class="fas fa-question fa-lg" data-toggle="tooltip" data-placement="down"
-                    title="Preguntas Frecuentes"></i></div>
+                title="Preguntas Frecuentes"></i></div>
+             -->
 
             <div id="about"><i class="fas fa-info-circle fa-lg" data-toggle="tooltip" data-placement="down"
                     title="Acerca de"></i></div>
@@ -69,32 +73,48 @@
     </div>
 
     <div class="row mb-3" id=indicadores>
-        <div class="col-xl-3 col-sm-6 py-1">
-            <div class="card bg-success text-white h-80">
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card bg-success text-white h-100">
                 <div class="card-body bg-success">
                     <h6 class="text-uppercase">IDES NACIONALES</h6>
                     <h1 class="display-5">15</h1>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 py-1">
-            <div class="card text-white bg-danger h-70">
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card text-white bg-danger h-80">
                 <div class="card-body bg-danger">
                     <h6 class="text-uppercase">IDES SUBNACIONALES</h6>
                     <h1 class="display-5">86</h1>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 py-1">
-            <div class="card text-white bg-info h-70">
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card text-white bg-info h-100">
                 <div class="card-body bg-info">
+                    <h6 class="text-uppercase">VISUALIZADORES</h6>
+                    <h1 class="display-5">56</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card text-white bg-secondary h-80">
+                <div class="card-body">
                     <h6 class="text-uppercase">RECURSOS DESCARGABLES</h6>
                     <h1 class="display-5">1458</h1>
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 py-1">
-            <div class="card text-white bg-warning h-70">
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card text-white bg-primary h-80">
+                <div class="card-body">
+                    <h6 class="text-uppercase">USO DE ESTÁNDARES</h6>
+                    <h1 class="display-5">60%</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-sm-6 py-1">
+            <div class="card text-white bg-warning h-80">
                 <div class="card-body">
                     <h6 class="text-uppercase">PLATAFORMAS ÓPTIMAS</h6>
                     <h1 class="display-5">93%</h1>
@@ -242,7 +262,7 @@
     </div>
 
     <div class="card" id="fundamentales">
-
+    <h6>Datos fundamentales</h6>
     </div>
 
     <div class="wrapper" id="recursos">
@@ -343,8 +363,18 @@
         <img src="imagenes/geohealthcheck.png">
     </div>
 
-    <div class="card" id="mapaestadoide" style="display:none;">
-        <div class="btn-group" style="padding-left: 10px; padding-right:10px;padding-top:10px;">
+    <div class="card" id="mapaestadoide">
+        <script> 
+            mapboxgl.accessToken = 'pk.eyJ1IjoicmFmZmFlbGxhYW5pbGlvIiwiYSI6ImNrZWlubncydjEwOGgyd21udHdmOWJ4M24ifQ.E2q7D7b-Je_x7VRjbqjAAA';
+            var map = new mapboxgl.Map({
+                container: 'mapaestadoide',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                center: [-70.32,-17.75],
+                zoom: 2
+            });
+        </script>
+
+            <div class="btn-group" style="padding-left: 10px; padding-right:10px;padding-top:10px;">
             <button type="button" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">País<span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -375,25 +405,15 @@
             <button type="button" data-toggle="dropdown" class="btn btn-secondary dropdown-toggle">Especifique <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <a class="dropdown-item" href="#">IDE Nacional Estatal</a>
-                <a class="dropdown-item" href="#">IDE Subnacional Estatal</a>
-                <a class="dropdown-item" href="#">Visualizador Nacional</a>
-                <a class="dropdown-item" href="#">Visualizador Subnacional</a>
-                <a class="dropdown-item" href="#">Productos Cartográficos</a>
-                <a class="dropdown-item" href="#">Visualizador Académico</a>
-                <a class="dropdown-item" href="#">Visualizador Institución/Empresa Externa</a>
+                <a class="dropdown-item" href="#">***</a>
             </ul>
 
             <button type="button" class="btn btn-dark"><i class="fas fa-search"></i> <span class="caret"></span>
             </button>
-
-          </div>
+        </div>
         </div>
 
        
-
-   
-
     <div class="card" id="catalogo" style="display: none;">
         <h6>Descarga de capas</h6>
         <img src="imagenes/geonetwork.png" style="width:690px;">
@@ -441,7 +461,7 @@
         </div>
 
         <div id="tabla1">
-            <table class="table table-striped">
+            <table class="table table-borderless">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -460,7 +480,7 @@
         </div>
 
         <div id="tabla2" style="display: none;">
-            <table class="table table-striped">
+            <table class="table table-borderless">
                 <thead>
                     <tr>
                         <th>Nombre</th>
@@ -493,7 +513,7 @@
             </table>
         </div>
 
-        <table id="tablalistadolac" class="table table-striped" style="display:none;">
+        <table id="tablalistadolac" class="table table-borderless" style="display:none;">
             <thead>
                 <tr>
                     <th>País</th>

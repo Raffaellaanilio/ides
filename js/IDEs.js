@@ -1,5 +1,8 @@
+$('[data-toggle="tooltip"]').tooltip();
+
 $(document).ready(function(){
   $("#contenedormapa").hide();
+  $("#mapaestadoide").hide();
 
   $("#chart").css('background', '#5acdf0');
 
@@ -22,6 +25,9 @@ $(document).ready(function(){
       $("#tituloestadoide").hide();
       $("#chart").css('background', '#5acdf0');
       $("#globe").css('background', 'none');
+      $("#layer").css('background', 'none');
+      $("#nodos").css('background', 'none');
+      $("#monitor").css('background', 'none');
   });
 
   $("#globe").click(function(){
@@ -80,6 +86,7 @@ $(document).ready(function(){
     $("#catalogo").hide();
     $("#titulo").hide();
     $("#infonodos").hide();
+    $("#contenedormapa").hide();
     $("#estadoide").show();
     $("#mapaestadoide").show();
     $("#tituloestadoide").show();
