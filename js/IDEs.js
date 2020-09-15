@@ -4,7 +4,7 @@ $(document).ready(function(){
   $("#contenedormapa").hide();
   $("#mapaestadoide").hide();
 
-  $("#chart").css('background', '#5acdf0');
+  $("#chart").css('background', '#989A99');
 
   $('[data-toggle="tooltip"]').tooltip();
   
@@ -23,7 +23,7 @@ $(document).ready(function(){
       $("#mapaestadoide").hide();
       $("#infonodos").hide();
       $("#tituloestadoide").hide();
-      $("#chart").css('background', '#5acdf0');
+      $("#chart").css('background', '#989A99');
       $("#globe").css('background', 'none');
       $("#layer").css('background', 'none');
       $("#nodos").css('background', 'none');
@@ -49,7 +49,7 @@ $(document).ready(function(){
     $("#layer").css('background', 'none');
     $("#nodos").css('background', 'none');
     $("#monitor").css('background', 'none');
-    $("#globe").css('background', '#5acdf0');
+    $("#globe").css('background', '#989A99');
 
   });
 
@@ -72,7 +72,7 @@ $(document).ready(function(){
     $("#globe").css('background', 'none');
     $("#layer").css('background', 'none');
     $("#monitor").css('background', 'none');
-    $("#nodos").css('background', '#5acdf0');
+    $("#nodos").css('background', '#989A99');
   });
 
   $("#monitor").click (function(){
@@ -94,7 +94,7 @@ $(document).ready(function(){
     $("#globe").css('background', 'none');
     $("#nodos").css('background', 'none');
     $("#layer").css('background', 'none');
-    $("#monitor").css('background', '#5acdf0');
+    $("#monitor").css('background', '#989A99');
 
   });
 
@@ -117,7 +117,7 @@ $(document).ready(function(){
     $("#globe").css('background', 'none');
     $("#nodos").css('background', 'none');
     $("#monitor").css('background', 'none');
-    $("#layer").css('background', '#5acdf0');
+    $("#layer").css('background', '#989A99');
   });
 
   $("#botonidenacional").click (function(){
