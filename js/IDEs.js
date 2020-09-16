@@ -16,13 +16,14 @@ $(document).ready(function(){
       $("#recursos").show();
       $("#titulo").show();
       $("#contenedormapa").hide();
-      $("#catalogo").hide();
+      $("#catalogofiltro").hide();
       $("#estadoide").hide();
       $("#nodoside").hide();
       $("#pestañasglobe").hide();
       $("#mapaestadoide").hide();
       $("#infonodos").hide();
       $("#tituloestadoide").hide();
+      $("#catalogoresultados").hide();
       $("#chart").css('background', '#989A99');
       $("#globe").css('background', 'none');
       $("#layer").css('background', 'none');
@@ -36,13 +37,14 @@ $(document).ready(function(){
     $("#lineamientos").hide();
     $("#fundamentales").hide();
     $("#recursos").hide();
-    $("#catalogo").hide();
+    $("#catalogofiltro").hide();
     $("#estadoide").hide();
     $("#nodoside").hide();
     $("#titulo").hide();
     $("#infonodos").hide();
     $("#mapaestadoide").hide();
     $("#tituloestadoide").hide();
+    $("#catalogoresultados").hide();
     $("#contenedormapa").show();
     $("#pestañasglobe").show();
     $("#chart").css('background', 'none');
@@ -61,11 +63,12 @@ $(document).ready(function(){
     $("#recursos").hide();
     $("#contenedormapa").hide();
     $("#pestañasglobe").hide();
-    $("#catalogo").hide();
+    $("#catalogofiltro").hide();
     $("#estadoide").hide();
     $("#titulo").hide();
     $("#mapaestadoide").hide();
     $("#tituloestadoide").hide();
+    $("#catalogoresultados").hide();
     $("#nodoside").show();
     $("#infonodos").show();
     $("#chart").css('background', 'none');
@@ -83,10 +86,11 @@ $(document).ready(function(){
     $("#recursos").hide();
     $("#nodoside").hide();
     $("#pestañasglobe").hide();
-    $("#catalogo").hide();
+    $("#catalogofiltro").hide();
     $("#titulo").hide();
     $("#infonodos").hide();
     $("#contenedormapa").hide();
+    $("#catalogoresultados").hide();
     $("#estadoide").show();
     $("#mapaestadoide").show();
     $("#tituloestadoide").show();
@@ -112,7 +116,8 @@ $(document).ready(function(){
     $("#infonodos").hide();
     $("#mapaestadoide").hide();
     $("#tituloestadoide").hide();
-    $("#catalogo").show();
+    $("#catalogofiltro").show();
+    $("#catalogoresultados").show();
     $("#chart").css('background', 'none');
     $("#globe").css('background', 'none');
     $("#nodos").css('background', 'none');
@@ -158,6 +163,10 @@ $("#botonlistadolac").click (function(){
   $("#botonidepais").addClass ("btn-dark");
 });
 
+$("#globe").click(function(){
+  $("#botonidenacional").css('box-shadow', '4px 4px 4px #c3c4c6');
+});
+
 $("#botonidenacional").click (function(){
   $("#botonidenacional").css('box-shadow', '4px 4px 4px #c3c4c6');
   $("#botonidesubnacional").css('box-shadow', 'none');
@@ -174,3 +183,52 @@ $("#botonidepais").click (function(){
 });
 
 });
+
+
+
+/*
+$("#monitor").mouseover(function(){
+    $("#monitor").css('background-color','#989A99');
+    $("#monitor").css('padding','21px 21px');
+  });
+  $("#monitor").mouseout(function(){
+    $("#monitor").css('background-color','#636564');
+    $("#monitor").css('padding','19px 19px');
+  });
+
+  $("#globe").mouseover(function(){
+    $("#globe").css('background-color','#989A99');
+    $("#globe").css('padding','21px 21px');
+  });
+  $("#globe").mouseout(function(){
+    $("#globe").css('background-color','#636564');
+    $("#globe").css('padding','19px 19px');
+  });
+
+  $("#nodos").mouseover(function(){
+    $("#nodos").css('background-color','#989A99');
+    $("#nodos").css('padding','21px 21px');
+  });
+  $("#nodos").mouseout(function(){
+    $("#nodos").css('background-color','#636564');
+    $("#nodos").css('padding','19px 19px');
+  });
+
+  $("#layer").mouseover(function(){
+    $("#layer").css('background-color','#989A99');
+    $("#layer").css('padding','21px 21px');
+  });
+  $("#layer").mouseout(function(){
+    $("#layer").css('background-color','#636564');
+    $("#layer").css('padding','19px 19px');
+  });
+
+  $("#chart").mouseover(function(){
+    $("#chart").css('background-color','#989A99');
+    $("#chart").css('padding','21px 21px');
+  });
+  $("#chart").mouseout(function(){
+    $("#chart").css('background-color','#636564');
+    $("#chart").css('padding','19px 19px');
+  });
+   */

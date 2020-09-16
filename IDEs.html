@@ -63,7 +63,7 @@
                     id="nodos"></i></li>
             <li><i class="fas fa-tasks fa-lg" data-toggle="tooltip" data-placement="right" title="Estado"
                     id="monitor"></i></li>
-            <li><i class="fas fa-layer-group fa-lg" data-toggle="tooltip" data-placement="right" title="Capas"
+            <li><i class="fas fa-layer-group fa-lg" data-toggle="tooltip" data-placement="right" title="Catálogo"
                     id="layer"></i></li>
         </ul>
     </div>
@@ -282,6 +282,7 @@
             zoom: 2
         });
     </script>
+    
     <div class="card placeholders" id="nodoside" style="display:none;">
         <script>
             var config =    
@@ -318,7 +319,7 @@
                         {
                             hover:
                             {
-                                enabled: false,
+                                enabled: true,
                                 brightness: 0
                             }
                         }
@@ -327,12 +328,12 @@
                 series:
                     [
                         {
-                            keys: ['from', 'to', 'weight'],
+                            keys: ['from', 'to','weight'],
                             data: [
-                                ['Group A', 'Group F', 2],
-                                ['Group A', 'Group G', 1],
-                                ['Group B', 'Group H', 2],
-                                ['Group B', 'Group I', 1],
+                                ['Ministerio de Agricultura', 'IDE Minagri', 1],
+                                ['Ministerio de Agricultura', 'Sistema de Información Territorial de Humedales Alto Andinos', 1],
+                                ['SERNAGEOMIN', 'Portal GEOMIN', 1],
+                                ['SERNAGEOMIN', 'Concesiones Mineras', 1],
                                 ['Group C', 'Group F', 1],
                                 ['Group D', 'Group G', 1],
                                 ['Group E', 'Group J', 1]
@@ -345,7 +346,7 @@
                 },
                 tooltip:
                 {
-                    enabled: false
+                    enabled: true
                 }
             };
 
@@ -360,7 +361,53 @@
 
 
     <div class="card" id="estadoide" style="display: none;">
-        <img src="imagenes/geohealthcheck.png">
+        <div class="row mb-3" id="tarjetasmonitoreo">
+            <div class="col-xl-2 col-sm-6 py-1">
+                <div class="card text-white bg-success" style="text-align: right;width:180px">
+                    <div class="card-body">
+                    <h4 id="operacional" class="text-uppercase">91%</h4>
+                    </div>
+                    <div class="card-footer">Operacional</div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-sm-6 py-1">
+                <div class="card text-white bg-danger" style="text-align: right; width:180px;">
+                    <div class="card-body">
+                        <h4 id="confiable" class="text-uppercase">90.6%</h4>
+                    </div>
+                    <div class="card-footer">Confiable</div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-sm-6 py-1">
+                <div class="card text-white bg-secondary" style="text-align: right;width:180px">
+                    <div class="card-body">
+                        <h4 id="interrumpido" class="text-uppercase">9%</h4>
+                    </div>
+                    <div class="card-footer">Interrumpido</div>
+                </div>
+            </div>
+        </div>
+        <h5 style="text-align: center;">Recursos Interrumpidos</h5>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Nombre</th>
+                    <th>Pais</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>OGC API Features (WFS3)</td>
+                    <td>Administrative Units and Statistical Units - Finland (beta)</td>
+                    <td>Finlandia</td>
+                    <td><i class="fas fa-times-circle" style="color:#C05746;"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+    
     </div>
 
     <div class="card" id="mapaestadoide">
@@ -413,11 +460,138 @@
         </div>
         </div>
 
-       
-    <div class="card" id="catalogo" style="display: none;">
-        <h6>Descarga de capas</h6>
-        <img src="imagenes/geonetwork.png" style="width:690px;">
-    </div>
+    
+        <div class="card" id="catalogofiltro" style="display: none;">
+            <div class="card-header">Filtrar Resultados</div>
+            <input class="form-control" type="text" id="palabraclave" placeholder="Palabra Clave...">
+            <div class="card-body" style="text-align:left;">
+                <div class="container">
+                    <div id="accordion">
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            País
+                          </a>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Chile</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Argentina</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Uruguay</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Bolivia</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Perú</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Ecuador</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                          Tipo de Plataforma
+                        </a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">IDE Nacional</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">IDE Subnacional</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Visualizador</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Productos Cartográficos</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            Categoría
+                          </a>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Límites Administrativos</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Biodiversidad</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Energía</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Población</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Economía</label>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="card-header">
+                          <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                            Tipo
+                          </a>
+                        </div>
+                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Capa Vectorial</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Capa Raster</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Mapa</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Documento</label>
+                              </div>
+                              <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Otros</label>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-block">Filtrar</button>
+        </div>
+        
+        <div class="card" id="catalogoresultados" style="display: none;">
+        <div class="card-header" style="text-align: center;">Catálogos de Recursos Espaciales - Resultados</div>   
+            </div>
 
     <div class="card" id="pestañasglobe" style="display: none;">
         <div class="btn-group">
@@ -551,6 +725,7 @@
     </div>
 
     <div class="card" id="infonodos" style="display: none;">
+
             <div class="card-header" style="text-align:center;">Información del nodo</div>
             <div class="card-body">
                 <table class="table table-borderless">

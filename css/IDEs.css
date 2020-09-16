@@ -119,6 +119,12 @@ transition:all 500ms ease;
     text-align: center;
 }
 
+#tarjetasmonitoreo {
+    width:1150px;
+    margin-left:10px;
+    margin-right:0px;
+}
+
 #grafico{
     position: absolute;
     width:595px;
@@ -168,21 +174,21 @@ h6 {
 }
 
 #mapaestadoide {
-    width:490px;
+    width:510px;
     float:left;
     margin-left:10px;
     margin-top:2px;
     height:540px;
 }
 
-#catalogo {
-    width:1000px;
+#catalogofiltro {
+    width:300px;
     float:left;
     margin-left:73px;
     text-align:center;
     border-spacing:10px 5px;
     margin-top:10px;
-    height:540px;
+    height:560px;
 }
 
 #pestañasglobe {
@@ -280,3 +286,39 @@ h6 {
     border-spacing:10px 5px;
     margin-top:10px;
 }
+
+#palabraclave {
+    margin-top:5px;
+    width:262px;
+    margin-left: 18px;
+}
+
+#catalogoresultados{
+    width:890px;
+    float:left;
+    margin-left:10px;
+    margin-top:10px;
+    height:560px;
+}
+
+#operacional::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    margin-right:90px;
+}
+
+#confiable::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c1";
+    margin-right:60px;
+}
+
+#interrumpido::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00d";
+    margin-right:100px;
+}
+
